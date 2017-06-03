@@ -9,8 +9,8 @@
   <ion-item *ngFor="let workout of workouts" (click)="selectedWorkout(workout)">
 
     {{ workout.tittle}}
-     <button ion-button color="danger" (click)="delete(workout._id.$oid)">Delete</button>
-     <button ion-button  (click)="update(workout._id.$oid)">Update</button>
+     <button ion-button color="danger" (click)="delete(workout._id.$oid)" style="float: right;">Delete</button>
+     <!--<button ion-button  (click)="update(workout._id.$oid)">Update</button>-->
 
   </ion-item>
 </ion-content>

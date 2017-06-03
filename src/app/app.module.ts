@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 import { HttpModule} from '@angular/http';
 import { FormsModule ,ReactiveFormsModule } from '@angular/forms';
 
-import { addWorkOut } from '../pages/add/addWorkOut';
+
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -20,7 +20,6 @@ import { WorkOutService } from '../Services/workOuts';
 @NgModule({
   declarations: [
     MyApp,
-    addWorkOut,
     ContactPage,
     HomePage,
     TabsPage,
@@ -38,7 +37,6 @@ import { WorkOutService } from '../Services/workOuts';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    addWorkOut,
     ContactPage,
     HomePage,
     TabsPage,
