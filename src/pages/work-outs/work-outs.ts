@@ -25,8 +25,26 @@ export class WorkOuts {
     }
 
     selectedWorkout(workout){
-      console.log(workout);
+      // console.log(workout);
       
+    }
+
+    delete(id){
+      console.log(id)
+      this._WorkOutService.deleteWorkout(id).subscribe(workouts => {
+        console.log(workouts);
+        
+      })
+    }
+    update(id){
+      let workout:any={};
+      workout.tittle ='tittle2';
+      workout.note ='note2';
+      workout.type ='type2';
+      console.log(id);
+      console.log(workout);
+
+      this._WorkOutService.updateWorkout(id,workout);
     }
 
 

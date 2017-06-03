@@ -8,6 +8,7 @@ export class WorkOutService{
 
     apiKey;
     workOutURL;
+    workOutBaseURL;
 
     static get parameters(){
         return [Http];
@@ -15,9 +16,10 @@ export class WorkOutService{
     constructor(private _http:Http){
 
         // this._http = _http;
-        this.apiKey='Zv8ZogLcYJKq5t_lxzHbphBNv8oOd3Zj';
+        this.apiKey='X5Aw3ugxqYg6fLEvn7vHuxJKovmNvHTR';
         // this.workOutURL='https://api.mlab.com/api/1/databases?apiKey=X5Aw3ugxqYg6fLEvn7vHuxJKovmNvHTR';
         this.workOutURL='https://api.mlab.com/api/1/databases/ionic-crud/collections/work-outs/?apiKey=X5Aw3ugxqYg6fLEvn7vHuxJKovmNvHTR';
+        this.workOutBaseURL='https://api.mlab.com/api/1/databases/ionic-crud/collections/work-outs/';
         console.log('Services Connected');
         
 
@@ -57,4 +59,29 @@ export class WorkOutService{
             });
 */
     }
+
+
+    deleteWorkout(id){
+        let url= this.workOutBaseURL+id+'?apiKey='+this.apiKey;
+        console.log(url);
+        
+
+         return this._http.delete(url)
+         .map(res =>  res.json)
+
+    }
+
+     updateWorkout(id,workout){
+        let url= this.workOutBaseURL+id+'?apiKey='+this.apiKey;
+        console.log(url);
+        
+
+         return this._http.patch(this.workOutBaseURL+id+'?apiKey='+this.apiKey,JSON.stringify(workout))
+         .map(res =>  res.json)
+
+    }
+
+
+    
+
 }

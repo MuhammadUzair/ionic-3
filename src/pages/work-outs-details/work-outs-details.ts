@@ -9,8 +9,16 @@ import { WorkOutService } from '../../Services/workOuts';
 })
 export class WorkOutsDetails {
 
-   constructor(public navCtrl: NavController) {
+  workouts;
 
+   constructor(public navCtrl: NavController,private _WorkOutService:WorkOutService) {
+
+  }
+  ngOnInit(){
+      
+      this._WorkOutService.getWorkouts().subscribe(workouts => {
+        this.workouts = workouts;
+      })
   }
 
 }
